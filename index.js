@@ -19,6 +19,12 @@ const pusher = new Pusher({
   useTLS: true,
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome To The Chat App With Pusher",
+  });
+});
+
 // Routes
 app.post("/api/messages", async (req, res) => {
   const { message, sender } = req.body;
